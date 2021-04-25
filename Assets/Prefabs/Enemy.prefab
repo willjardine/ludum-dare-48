@@ -308,7 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   punchAttackPoint: {fileID: 8481797214430710309}
   kickAttackPoint: {fileID: 6676193410976143184}
-  standUpTimer: 10
+  standUpTimer: 2
   attackSound: {fileID: 8300000, guid: 6868fa230aeb34fa48e1a46692c66b7e, type: 3}
   knockDownSound: {fileID: 8300000, guid: f8b4e5488a53f4e4b8797bf71696a67c, type: 3}
   deathSound: {fileID: 8300000, guid: f59b40fae87a94e18bc063a9c154f55a, type: 3}
@@ -407,6 +407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+  isHitable: 0
 --- !u!1 &6676193410976143184
 GameObject:
   m_ObjectHideFlags: 0

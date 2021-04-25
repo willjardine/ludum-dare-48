@@ -18,16 +18,17 @@ public class AttackPoint : MonoBehaviour {
 		Collider[] hit = Physics.OverlapSphere(transform.position, radius, collisionLayer);
 		if (hit.Length > 0) {
 			//print("Hit " + hit[0].gameObject.name);
-
-			Instantiate(hitFxPrefab, transform.position, Quaternion.identity);
-
-			if (gameObject.CompareTag("Knock Down")) {
-				hit[0].GetComponent<Health>().ApplyDamage(damage, true);
-			} else {
-				hit[0].GetComponent<Health>().ApplyDamage(damage, false);
+			Health health = hit[0].GetComponent<Health>();
+			if (health.health > 0f && health.isHitable) {
+				Instantiate(hitFxPrefab, transform.position, Quaternion.identity);
+				if (gameObject.CompareTag("Knock Down")) {
+					health.ApplyDamage(damage, true);
+				} else {
+					health.ApplyDamage(damage, false);
+				}
+				gameObject.SetActive(false);
 			}
 
-			gameObject.SetActive(false);
 		}
 	}
 

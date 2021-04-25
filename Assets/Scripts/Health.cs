@@ -5,6 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour {
 
 	public float health = 100f;
+	public bool isHitable;
 
 	private CharacterAnimation charAnimation;
 	private EnemyMovement enemyMovement;
@@ -21,6 +22,10 @@ public class Health : MonoBehaviour {
 		}
 	}
 
+	public void Start() {
+		isHitable = true;
+	}
+
 	public void ApplyDamage(float damage, bool knockDown) {
 		if (isDead) {
 			return;
@@ -29,23 +34,23 @@ public class Health : MonoBehaviour {
 
 		if (health <= 0f) {
 			charAnimation.Death();
+			isHitable = false;
 			if (isPlayer) {
 				Debug.Log("GAME OVER!");
 			}
 			return;
 		}
 
-		if (!isPlayer) {
-			if (knockDown) {
-				if (Random.Range(0, 2) > 0) {
-					charAnimation.KnockDown();
-				}
-			} else {
-				if (Random.Range(0, 3) > 1) {
-					charAnimation.Hit();
-				}
+		if (knockDown) {
+			if (Random.Range(0, 2) > 0) {
+				charAnimation.KnockDown();
+			}
+		} else {
+			if (Random.Range(0, 3) > 1) {
+				charAnimation.Hit();
 			}
 		}
+
 	}
 
 }

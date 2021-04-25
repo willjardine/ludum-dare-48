@@ -70,6 +70,13 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
+    functionName: SFX_Attack
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0
     functionName: PunchAttackOn
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -77,7 +84,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0
-    functionName: SFX_Attack
+    functionName: SetIsAttacking
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -85,6 +92,13 @@ AnimationClip:
     messageOptions: 0
   - time: 0.125
     functionName: PunchAttackOff
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.25
+    functionName: SetIsNotAttacking
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

@@ -8,16 +8,21 @@ public class PlayerMovement : MonoBehaviour {
 	private Rigidbody rb;
 	public float walkSpeed = 1f;
 	public float zSpeed = 1f;
+	public bool isAttacking;
+
+	private PlayerAttack playerAttack;
 
 
 	void Awake() {
 		charAnimation = GetComponentInChildren<CharacterAnimation>();
 		rb = GetComponent<Rigidbody>();
+		playerAttack = GetComponent<PlayerAttack>();
 	}
 
 	public void Update() {
 		UpdateFlip();
 		AnimateWalk();
+		playerAttack.UpdateAttack();
 	}
 
 	void FixedUpdate() {
@@ -25,11 +30,19 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void UpdateMovement() {
-		rb.velocity = new Vector3(
-			Input.GetAxisRaw("Horizontal") * walkSpeed,
-			rb.velocity.y,
-			Input.GetAxisRaw("Vertical") * zSpeed
-		);
+		if (isAttacking) {
+			rb.velocity = new Vector3(
+				0f,
+				rb.velocity.y,
+				0f
+			);
+		} else {
+			rb.velocity = new Vector3(
+				Input.GetAxisRaw("Horizontal") * walkSpeed,
+				rb.velocity.y,
+				Input.GetAxisRaw("Vertical") * zSpeed
+			);
+		}
 	}
 
 	void UpdateFlip() {

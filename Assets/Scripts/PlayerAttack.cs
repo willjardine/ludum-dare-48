@@ -27,7 +27,7 @@ public class PlayerAttack : MonoBehaviour {
 		currentComboState = ComboState.NONE;
 	}
 
-	void Update() {
+	public void UpdateAttack() {
 		ComboAttacks();
 		ResetComboState();
 	}

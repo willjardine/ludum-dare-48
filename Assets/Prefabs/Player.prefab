@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 5
-  zSpeed: 3
+  zSpeed: 5
 --- !u!114 &3174718850402188019
 MonoBehaviour:
   m_ObjectHideFlags: 0
