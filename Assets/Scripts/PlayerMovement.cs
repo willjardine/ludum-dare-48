@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
 	private CharacterAnimation charAnimation;
-	private SpriteRenderer sprite;
 	private Rigidbody rb;
 	public float walkSpeed = 1f;
 	public float zSpeed = 1f;
@@ -13,7 +12,6 @@ public class PlayerMovement : MonoBehaviour {
 
 	void Awake() {
 		charAnimation = GetComponentInChildren<CharacterAnimation>();
-		sprite = GetComponentInChildren<SpriteRenderer>();
 		rb = GetComponent<Rigidbody>();
 	}
 
@@ -36,9 +34,9 @@ public class PlayerMovement : MonoBehaviour {
 
 	void UpdateFlip() {
 		if (Input.GetAxisRaw("Horizontal") > 0) {
-			sprite.flipX = false;
+			transform.localScale = Vector3.one;
 		} else if (Input.GetAxisRaw("Horizontal") < 0) {
-			sprite.flipX = true;
+			transform.localScale = new Vector3(-1f, 1f, 1f);
 		}
 
 	}

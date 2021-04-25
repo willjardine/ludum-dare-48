@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour {
 	private CharacterAnimation charAnimation;
-	private SpriteRenderer sprite;
 	private Rigidbody rb;
 	public float speed = 5f;
 
@@ -21,7 +20,6 @@ public class EnemyMovement : MonoBehaviour {
 
 	public void Awake() {
 		charAnimation = GetComponentInChildren<CharacterAnimation>();
-		sprite = GetComponentInChildren<SpriteRenderer>();
 		rb = GetComponent<Rigidbody>();
 		playerTarget = GameObject.FindWithTag("Player").transform;
 	}
@@ -47,9 +45,9 @@ public class EnemyMovement : MonoBehaviour {
 		if (Vector3.Distance(transform.position, playerTarget.position) > attackDistance) {
 			Vector3 dir = (playerTarget.position - transform.position).normalized;
 			if (dir.x > 0) {
-				sprite.flipX = false;
+				transform.localScale = Vector3.one;
 			} else if (dir.x < 0) {
-				sprite.flipX = true;
+				transform.localScale = new Vector3(-1f, 1f, 1f);
 			}
 			rb.velocity = new Vector3(
 				dir.x * speed,
