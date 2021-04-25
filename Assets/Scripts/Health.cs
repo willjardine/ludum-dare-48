@@ -35,9 +35,7 @@ public class Health : MonoBehaviour {
 		if (health <= 0f) {
 			charAnimation.Death();
 			isHitable = false;
-			if (isPlayer) {
-				Debug.Log("GAME OVER!");
-			}
+			Invoke("CharacterDied", 2f);
 			return;
 		}
 
@@ -52,5 +50,17 @@ public class Health : MonoBehaviour {
 		}
 
 	}
+
+	void CharacterDied() {
+		if (isPlayer) {
+			// player died
+			Debug.Log("GAME OVER!");
+		} else {
+			//EnemyManager.instance.EnemyKilled();
+		}
+		gameObject.SetActive(false);
+	}
+
+
 
 }

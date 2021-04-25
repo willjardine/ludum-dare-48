@@ -248,7 +248,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2573930061166778468
 Transform:
   m_ObjectHideFlags: 0
@@ -407,6 +407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 5
   zSpeed: 5
+  isAttacking: 0
 --- !u!114 &3174718850402188019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,6 +421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+  isHitable: 0
 --- !u!1 &6069043389346752488
 GameObject:
   m_ObjectHideFlags: 0
