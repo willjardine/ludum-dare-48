@@ -16,7 +16,6 @@ public class CharacterAnimationDelegate : MonoBehaviour {
 	private Health health;
 	private EnemyMovement enemyMovement;
 	private PlayerMovement playerMovement;
-	private ShakeCamera shakeCamera;
 
 	public void Awake() {
 		charAnimation = GetComponent<CharacterAnimation>();
@@ -24,7 +23,6 @@ public class CharacterAnimationDelegate : MonoBehaviour {
 		health = GetComponentInParent<Health>();
 		enemyMovement = GetComponentInParent<EnemyMovement>();
 		playerMovement = GetComponentInParent<PlayerMovement>();
-		shakeCamera = GameObject.FindWithTag("MainCamera").GetComponent<ShakeCamera>();
 	}
 
 	void PunchAttackOn() {
@@ -120,6 +118,6 @@ public class CharacterAnimationDelegate : MonoBehaviour {
 	}
 
 	public void ShakeCameraOnFall() {
-		shakeCamera.ShouldShake = true;
+		ShakeCamera.instance.ShouldShake = true;
 	}
 }
