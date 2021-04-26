@@ -60,7 +60,8 @@ public class Health : MonoBehaviour {
 			// player died
 			SceneManager.LoadScene("GameOver");
 		} else {
-			//EnemyManager.instance.EnemyKilled();
+			// enemy died
+			WaveManager.instance.EnemyKilled();
 		}
 		gameObject.SetActive(false);
 	}
