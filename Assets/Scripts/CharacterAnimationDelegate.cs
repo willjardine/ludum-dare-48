@@ -67,17 +67,17 @@ public class CharacterAnimationDelegate : MonoBehaviour {
 	}
 
 	public void SFX_Attack() {
-		//audioSource.volume = 1f;
+		audioSource.volume = 0.25f;
 		audioSource.clip = attackSound;
 		audioSource.Play();
 	}
 	public void SFX_KnockDown() {
-		//audioSource.volume = 1f;
+		audioSource.volume = 1f;
 		audioSource.clip = knockDownSound;
 		audioSource.Play();
 	}
 	public void SFX_Death() {
-		//audioSource.volume = 1f;
+		audioSource.volume = 1f;
 		audioSource.clip = deathSound;
 		audioSource.Play();
 	}

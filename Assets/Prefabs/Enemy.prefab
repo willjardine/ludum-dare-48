@@ -154,7 +154,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1807560761
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0951feee5228d47fd88ac72b8a3aa101, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -309,9 +309,9 @@ MonoBehaviour:
   punchAttackPoint: {fileID: 8481797214430710309}
   kickAttackPoint: {fileID: 6676193410976143184}
   standUpTimer: 2
-  attackSound: {fileID: 8300000, guid: 6868fa230aeb34fa48e1a46692c66b7e, type: 3}
-  knockDownSound: {fileID: 8300000, guid: f8b4e5488a53f4e4b8797bf71696a67c, type: 3}
-  deathSound: {fileID: 8300000, guid: f59b40fae87a94e18bc063a9c154f55a, type: 3}
+  attackSound: {fileID: 8300000, guid: d6cae03b525a94e9db9b25682b0c919f, type: 3}
+  knockDownSound: {fileID: 8300000, guid: e462d45a92f8d47e3ac63efb130bbe19, type: 3}
+  deathSound: {fileID: 8300000, guid: 12038c425cace41b3a8ae08fe537126e, type: 3}
 --- !u!1 &6356365939346295711
 GameObject:
   m_ObjectHideFlags: 0

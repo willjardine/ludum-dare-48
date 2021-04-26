@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour {
 
@@ -35,6 +36,9 @@ public class Health : MonoBehaviour {
 		if (health <= 0f) {
 			charAnimation.Death();
 			isHitable = false;
+			if (isPlayer) {
+				ScreenFlash.instance.Flash();
+			}
 			Invoke("CharacterDied", 2f);
 			return;
 		}
@@ -54,7 +58,7 @@ public class Health : MonoBehaviour {
 	void CharacterDied() {
 		if (isPlayer) {
 			// player died
-			Debug.Log("GAME OVER!");
+			SceneManager.LoadScene("GameOver");
 		} else {
 			//EnemyManager.instance.EnemyKilled();
 		}
